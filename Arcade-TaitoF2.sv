@@ -369,8 +369,8 @@ wire [15:0] joystick_p3, joystick_p4;
 // raw[5] = Start+B) was dead: joydb9md.v's Start+B Mode-inject sets raw11 and
 // CLEARS raw10/raw5, so the AND is always 0 -> raw11 alone is exact. The matrix
 // reproduces it per game.
-wire [15:0] joystick_p1 = joydb_1ena ? (OSD_STATUS ? 16'b0 : joydb_1_mapped[11:0]) : joystick_p1_USB;
-wire [15:0] joystick_p2 = joydb_2ena ? (OSD_STATUS ? 16'b0 : joydb_2_mapped[11:0]) : joydb_1ena ? joystick_p1_USB : joystick_p2_USB;
+wire [15:0] joystick_p1 = joydb_1ena ? (OSD_STATUS ? 16'b0 : joydb_1_mapped[12:0]) : joystick_p1_USB;
+wire [15:0] joystick_p2 = joydb_2ena ? (OSD_STATUS ? 16'b0 : joydb_2_mapped[12:0]) : joydb_1ena ? joystick_p1_USB : joystick_p2_USB;
 // [MiSTer-DB9-Pro END]
 wire [7:0] analog_x_p1, analog_y_p1, analog_x_p2, analog_y_p2;
 wire [7:0] paddle_p1, paddle_p2;
